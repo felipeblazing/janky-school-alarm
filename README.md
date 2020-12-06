@@ -7,7 +7,7 @@ sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
 chromium-browser http://127.0.0.1:9000 --start-fullscreen &
 ```
 
-2. cd into the clock_server dir and run this command to copy the service into its appropraite lcation
+2. cd into the repo dir and run this command to copy the service into its appropraite lcation
 
 ```
 sudo cp school_classes.service /etc/systemd/system/school_classes.service
