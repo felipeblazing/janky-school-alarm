@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <meta http-equiv="refresh" content="30">
+        <style>
+            #app{
+                height:100%;
+                width:100%;
+            }
+            
+            .incoming{
+                background-color:yellow;
+                color:black;
+            }
+            
+            .in_class{
+                background-color:red;
+                color:white;
+            }
+            
+   
+            
+            .class_box{
+                font-size:16vw;
+                text-align:center;
+                
+            }
+            
+            #time-left{
+                font-size:24vw;
+            }
+            
+        </style>
+        <script>
+            var current_class;
+            var next_class;
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                result = JSON.parse(this.responseText);
+                current_class = result.current_class;
+                next_class = result.next_class;
+                
+                update_model();
+              }
+            };
+
+            function update_model(){
+                var new_name = "All Done!";
+                var time_left = "-";
+                if(current_class !=  null){
+                    new_name = current_class.name; 
+                    time_left = current_class.time_left;
+                    document.getElementById("app").classList.remove("incoming");
+                    document.getElementById("app").classList.add("in_class");
+                    
+                }else if(next_class != null){
+                     new_name = next_class.name;
+                     time_left = next_class.time_left;
+                    document.getElementById("app").classList.remove("in_class");
+                    document.getElementById("app").classList.add("incoming");
+
+                }else{
+                    document.getElementById("app").classList.remove("incoming");
+                    document.getElementById("app").classList.remove("in_class");
+                }
+                
+                document.getElementById("current_name").innerHTML = new_name;  
+                document.getElementById("time_left").innerHTML = time_left;  
+
+            }
+            
+            
+            setInterval(function(){ 
+                xhttp.open("GET", "class_state", true);
+                xhttp.send();
+            
+            }, 1000);
+            xhttp.open("GET", "class_state", true);
+            xhttp.send();
+        </script>
+    </head>
+    <body>
+        <div id="app" class="incoming">
+            <div id="current_class" class="class_box">
+                <div id="current_name">
+                    Math
+                </div>
+                <div id="time_left">
+                   12:15 (Ends)
+                </div>
+            </div>
+                
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,7 @@
+7:30,7:50,Morning Meeting
+7:50,8:10,Math
+8:55,9:40,Magnet
+10:40,11:00,English Language
+12:45,1:05,Science
+13:30,13:50,Soc Studies / Writing
+16:55,16:,Test
