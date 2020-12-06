@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 ExecStart=/usr/bin/python3 -u class_service.py
-WorkingDirectory=/home/pi/clock_server/
+WorkingDirectory=/home/pi/janky-school-alarm/
 StandardOutput=inherit
 StandardError=inherit
 Restart=always
