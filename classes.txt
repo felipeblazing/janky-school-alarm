@@ -4,4 +4,6 @@
 10:40,11:00,English Language
 12:45,1:05,Science
 13:30,13:50,Soc Studies / Writing
-16:55,16:58,Test
+17:28,17:29,Test
+17:31,17:32,Test
+17:34,17:35,Test
