@@ -1,3 +1,7 @@
+These snippets assume you cloned  this repo into the home folder of a user called pi. So in 
+/home/pi. 
+
+
 1. modify /etc/xdg/lxsession/LXDE-pi/autostart  to include the line
 
 ```
