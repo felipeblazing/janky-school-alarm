@@ -1,4 +1,4 @@
-1. modify /etc/rc.local to include the line
+1. modify /etc/xdg/lxsession/LXDE-pi/autostart  to include the line
 
 ```
 sudo nano /etc/xdg/lxsession/LXDE-pi/autostart 
