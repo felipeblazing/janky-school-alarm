@@ -6,4 +6,4 @@
 13:30,13:50,Soc Studies / Writing
 17:28,17:29,Test
 17:31,17:32,Test
-17:34,17:35,Test
+19:55,20:58,Tests

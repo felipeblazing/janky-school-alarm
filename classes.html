@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <style>
+            #classes_text{
+                width:100%;
+                height:95%;
+            }
+            textarea {
+              background: url(http://i.imgur.com/2cOaJ.png);
+              background-attachment: local;
+              background-repeat: no-repeat;
+              padding-left: 35px;
+              padding-top: 10px;
+              border-color: #ccc;
+
+              font-size: 13px;
+              line-height: 16px;
+            }
+
+            .textarea-wrapper {
+              display: inline-block;
+              background-image: linear-gradient(#F1F1F1 50%, #F9F9F9 50%);
+              background-size: 100% 32px;
+                width:100%;
+              background-position: left 10px;
+            }
+
+        </style>
+        <script>
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                alert("saved!");
+              }
+            };
+            function send_data(){
+                xhttp.open("GET", "classes_update?data="+encodeURIComponent(document.getElementById("classes_text").value), true);
+                xhttp.send();
+                
+            }
+            
+            
+            var request_list = new XMLHttpRequest();
+            request_list.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("classes_text").value = this.responseText;
+              }
+            };
+            
+            request_list.open("GET","classes",true);
+            request_list.send()
+        </script>
+    </head>
+    <body>
+        <div id="nav">
+            <a href="http://10.0.0.235:9000">Felipe</a>
+            <a href="http://10.0.0.235:9000/classes.html">Felipe Classes</a>
+            <a href="http://10.0.0.236:9000">Fausto</a>
+            <a href="http://10.0.0.236:9000/classes.html">Fausto Classes</a>
+        </div>
+        <input type="button" value="save" onclick="send_data()" style="font-size:2em"/>
+        <div class="textarea-wrapper">
+          <textarea id="classes_text"></textarea>
+        </div>
+    </body>
+</html>
